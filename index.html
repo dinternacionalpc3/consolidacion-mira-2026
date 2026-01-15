@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía Consolidación MIRA 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --mira-blue-dark: #002855;
+            --mira-blue-light: #0055a4;
+            --mira-yellow: #ffb81c;
+            --mira-orange: #e87722;
+        }
+        body {
+            background-color: #f3f4f6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .bg-mira-gradient {
+            background: linear-gradient(135deg, var(--mira-blue-dark) 0%, var(--mira-blue-light) 100%);
+        }
+        .border-mira-yellow { border-color: var(--mira-yellow); }
+        .text-mira-blue { color: var(--mira-blue-dark); }
+        .step-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+        .tab-active { border-bottom: 4px solid var(--mira-yellow); color: var(--mira-blue-dark); font-weight: bold; }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-5xl mx-auto bg-white shadow-2xl rounded-3xl overflow-hidden">
+        
+        <!-- Header -->
+        <div class="bg-mira-gradient p-8 text-center text-white relative">
+            <div class="absolute top-4 right-8 opacity-20 text-6xl">
+                <i class="fas fa-globe-americas"></i>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-bold mb-2">¡AVANCEMOS JUNTOS!</h1>
+            <p class="text-xl md:text-2xl font-light opacity-90 text-yellow-400">Consolidación Campaña Congreso 2026</p>
+            <div class="mt-4 inline-block bg-white text-blue-900 px-6 py-1 rounded-full font-bold text-sm uppercase tracking-widest">
+                Depuración InfoMIRA Referidos
+            </div>
+        </div>
+
+        <!-- Introducción -->
+        <div class="p-6 bg-blue-50 border-b border-blue-100 text-center">
+            <p class="text-gray-700 leading-relaxed max-w-3xl mx-auto">
+                Iniciamos la depuración de datos para asegurar que nuestros referidos sean <strong>Ciudadanos Colombianos</strong> con <strong>cédula inscrita</strong> en consulados o embajadas.
+            </p>
+        </div>
+
+        <!-- Selector de Perfil -->
+        <div class="flex border-b">
+            <button onclick="switchTab('delegados')" id="btn-delegados" class="w-1/2 py-4 text-center text-lg tab-active transition-all">
+                <i class="fas fa-user-tie mr-2"></i> PROTOCOLO DELEGADOS
+            </button>
+            <button onclick="switchTab('lideres')" id="btn-lideres" class="w-1/2 py-4 text-center text-lg text-gray-500 hover:bg-gray-50 transition-all">
+                <i class="fas fa-users mr-2"></i> PROTOCOLO LÍDERES
+            </button>
+        </div>
+
+        <!-- Contenido Delegados -->
+        <div id="content-delegados" class="p-6 md:p-10 space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Paso 1 -->
+                <div class="step-card bg-white p-6 rounded-2xl border-l-8 border-blue-800 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <span class="bg-blue-800 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">1</span>
+                        <h3 class="font-bold text-lg text-blue-900 italic">Acceso a Estadísticas</h3>
+                    </div>
+                    <p class="text-sm text-gray-600">Entra al menú de opciones e ingresa al <strong>Módulo Estadísticas</strong> en InfoMIRA. Busca la sede de tu iglesia.</p>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="step-card bg-white p-6 rounded-2xl border-l-8 border-blue-800 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <span class="bg-blue-800 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">2</span>
+                        <h3 class="font-bold text-lg text-blue-900 italic">Filtro Líderes Extranjeros</h3>
+                    </div>
+                    <p class="text-sm text-gray-600">Haz clic en la <strong>lupa de líderes extranjeros</strong>. Identifica quiénes NO tienen referidos.</p>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="step-card bg-white p-6 rounded-2xl border-l-8 border-blue-800 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <span class="bg-blue-800 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">3</span>
+                        <h3 class="font-bold text-lg text-blue-900 italic">Validación de Cédula</h3>
+                    </div>
+                    <p class="text-sm text-gray-600">Usa el icono <strong>"Puesto de Votación"</strong> o el portal de la Registraduría para verificar si el líder está habilitado en el exterior.</p>
+                </div>
+
+                <!-- Paso 4 -->
+                <div class="step-card bg-orange-50 p-6 rounded-2xl border-l-8 border-orange-500 shadow-md">
+                    <div class="flex items-center mb-4 text-orange-700">
+                        <span class="bg-orange-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">4</span>
+                        <h3 class="font-bold text-lg italic">Toma de Acción</h3>
+                    </div>
+                    <ul class="text-xs space-y-2 text-gray-700">
+                        <li>✅ <strong>CON referidos:</strong> NO se solicita eliminación.</li>
+                        <li>❌ <strong>SIN referidos + SIN cédula en exterior:</strong> Solicitar eliminación.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Acción Final Delegados -->
+            <div class="bg-blue-900 text-white p-6 rounded-3xl flex flex-col md:flex-row items-center justify-between">
+                <div class="mb-4 md:mb-0">
+                    <h4 class="font-bold text-xl uppercase tracking-wider text-yellow-400">Consolidado Final</h4>
+                    <p class="text-sm opacity-80">Registra en el Drive de tu país: Iglesia, Nombre y Celular completo.</p>
+                </div>
+                <div class="bg-white text-blue-900 p-3 rounded-xl font-mono text-sm font-bold shadow-lg">
+                    +INDICATIVO + NÚMERO (Sin espacios)
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenido Líderes -->
+        <div id="content-lideres" class="hidden p-6 md:p-10 space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <!-- Paso 1 -->
+                <div class="p-6">
+                    <div class="w-16 h-16 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl shadow-inner">
+                        <i class="fas fa-sign-in-alt"></i>
+                    </div>
+                    <h3 class="font-bold text-blue-900 mb-2">Ingreso</h3>
+                    <p class="text-xs text-gray-500 italic">Botón amarillo "INGRESAR" en "Soy líder Miraísta".</p>
+                </div>
+                <!-- Paso 2 -->
+                <div class="p-6">
+                    <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl shadow-inner">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="font-bold text-blue-900 mb-2">Consulta</h3>
+                    <p class="text-xs text-gray-500 italic">Botón verde (chulito) para ver cédula y puesto de votación actual.</p>
+                </div>
+                <!-- Paso 3 -->
+                <div class="p-6">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl shadow-inner">
+                        <i class="fas fa-check-double"></i>
+                    </div>
+                    <h3 class="font-bold text-blue-900 mb-2">Doble Verificación</h3>
+                    <p class="text-xs text-gray-500 italic">Usa el link de la Registraduría para confirmar el Censo 2026.</p>
+                </div>
+            </div>
+
+            <!-- Botones de Acción -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="border-2 border-dashed border-red-200 p-6 rounded-3xl relative">
+                    <span class="absolute -top-3 left-6 bg-red-500 text-white px-3 py-1 rounded text-xs font-bold uppercase">Eliminar</span>
+                    <p class="text-gray-700 text-sm">Si el referido <strong>NO</strong> tiene cédula habilitada para votar en el exterior o en Colombia.</p>
+                    <div class="mt-4 flex items-center text-red-600 font-bold">
+                        <i class="fas fa-trash-alt mr-2"></i> Botón Rojo
+                    </div>
+                </div>
+                <div class="border-2 border-dashed border-green-200 p-6 rounded-3xl relative">
+                    <span class="absolute -top-3 left-6 bg-green-500 text-white px-3 py-1 rounded text-xs font-bold uppercase">Activar</span>
+                    <p class="text-gray-700 text-sm">Usa el botón para la <strong>Táctica de Afinidad</strong> (Confirmación de apoyo al partido con su voto).</p>
+                    <div class="mt-4 flex items-center text-green-600 font-bold">
+                        <i class="fas fa-toggle-on mr-2"></i> Botón Verde/Gris
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Footer -->
+        <div class="bg-gray-100 p-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="text-center md:text-left">
+                <h5 class="font-bold text-blue-900 flex items-center justify-center md:justify-start">
+                    <i class="fas fa-question-circle mr-2 text-mira-yellow"></i> ¿Más líderes?
+                </h5>
+                <p class="text-xs text-gray-600 mt-1">¡Claro! Siempre que sean colombianos con cédula inscrita en consulados.</p>
+            </div>
+            <div class="text-center md:text-left">
+                <h5 class="font-bold text-blue-900 flex items-center justify-center md:justify-start">
+                    <i class="fas fa-question-circle mr-2 text-mira-yellow"></i> ¿Líderes externos?
+                </h5>
+                <p class="text-xs text-gray-600 mt-1">Solo si tienen referidos colombianos aptos para votar.</p>
+            </div>
+            <div class="text-center md:text-left">
+                <h5 class="font-bold text-blue-900 flex items-center justify-center md:justify-start">
+                    <i class="fas fa-question-circle mr-2 text-mira-yellow"></i> ¿Nuevos referidos?
+                </h5>
+                <p class="text-xs text-gray-600 mt-1">¡Sí! Es nuestra prioridad para ganar en 2026.</p>
+            </div>
+        </div>
+
+        <!-- Footer Logo/Link -->
+        <div class="p-6 text-center border-t border-gray-100">
+            <p class="text-gray-400 text-xs uppercase tracking-widest font-bold">Partido Político MIRA - Circunscripción Internacional</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="https://wsp.registraduria.gov.co/censo/consultar" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-xs hover:bg-blue-700 transition shadow-md">
+                    <i class="fas fa-external-link-alt mr-1"></i> Verificar Puesto de Votación
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(perfil) {
+            const btnDelegados = document.getElementById('btn-delegados');
+            const btnLideres = document.getElementById('btn-lideres');
+            const contentDelegados = document.getElementById('content-delegados');
+            const contentLideres = document.getElementById('content-lideres');
+
+            if (perfil === 'delegados') {
+                btnDelegados.classList.add('tab-active');
+                btnLideres.classList.remove('tab-active');
+                btnLideres.classList.add('text-gray-500');
+                contentDelegados.classList.remove('hidden');
+                contentLideres.classList.add('hidden');
+            } else {
+                btnLideres.classList.add('tab-active');
+                btnDelegados.classList.remove('tab-active');
+                btnDelegados.classList.add('text-gray-500');
+                contentLideres.classList.remove('hidden');
+                contentDelegados.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
